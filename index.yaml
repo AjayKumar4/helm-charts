@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  kaniko:
+  - apiVersion: v2
+    created: "2022-10-20T11:41:58.787701+01:00"
+    description: A Helm chart for Kubernetes Docker Build
+    digest: 45aa1c6a9f83860a8cb64565a1ef7c56b0e74340ddf8030a3574c2b04ec9bf62
+    icon: https://github.com/GoogleContainerTools/kaniko/blob/main/logo/Kaniko-Logo.png
+    name: kaniko
+    type: application
+    urls:
+    - https://AjayKumar4.github.io/helm-charts/kaniko-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-10-20T11:41:58.786623+01:00"

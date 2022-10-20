@@ -1,0 +1,6 @@
+apiVersion: v2
+name: kaniko
+description: A Helm chart for Kubernetes Docker Build
+type: application
+version: 1.0.0
+icon: https://github.com/GoogleContainerTools/kaniko/blob/main/logo/Kaniko-Logo.png

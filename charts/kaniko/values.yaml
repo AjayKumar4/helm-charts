@@ -1,0 +1,4 @@
+dockersecertname: "dockerhub-registry"
+context: ""
+dockerfile: "DockerFile"
+destination: ""

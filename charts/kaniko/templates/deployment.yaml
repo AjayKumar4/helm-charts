@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: kaniko
+  name: kaniko
+spec:
+  restartPolicy: Never
+  containers:
+    - name: kaniko
+      image: gcr.io/kaniko-project/executor
+      imagePullPolicy: Always
+      args:
+        - "--context={{ .Values.context }}"
+        {{ if .Values.dockerfile }}
+        - "--dockerfile={{ .Values.dockerfile }}"
+        {{ end}}
+        - "--destination={{ .Values.destination }}"
+      {{ if .Values.dockersecertname }}
+      volumeMounts:
+        - name: kaniko-secret
+          mountPath: /kaniko/.docker
+      {{ end}}
+  {{ if .Values.dockersecertname }}
+  volumes:
+    - name: kaniko-secret
+      secret:
+        secretName: {{ .Values.dockersecertname }}
+        items:
+          - key: .dockerconfigjson
+            path: config.json
+  {{ end}}
